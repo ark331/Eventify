@@ -129,12 +129,17 @@
         width: 700,
         hideTitle: true,
         overlay: true,
-        emoji: {
-          text: '🎟️ Book Your Event Ticket',
-          
-        },
+        
         onOpen: () => {
-          console.log("Tally popup opened");
+          const hideTallyBrand = setInterval(() => {
+          const badge = document.querySelector('[data-testid="branding"]');
+          if (badge) {
+            badge.innerText = 'Eventify | Built for Events';
+            badge.style.color = '#f472b6';
+            badge.style.fontFamily = 'Fira Code, monospace';
+            clearInterval(hideTallyBrand);
+          }
+        }, 500);
         },
         onSubmit: (payload) => {
           console.log("Form submitted!", payload);
