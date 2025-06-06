@@ -20,27 +20,31 @@
 
   <!-- Header -->
   <header class="flex flex-col md:flex-row justify-between items-center p-6 shadow space-y-4 md:space-y-0">
+    <!-- Logo + Brand Name -->
     <div class="flex items-center space-x-3">
       <img src="images/logo.png" alt="Logo" class="w-10 h-10 object-contain" />
       <h1 class="text-2xl font-bold">Eventify</h1>
     </div>
 
+    <!-- Navigation -->
     <nav class="flex space-x-4">
-      <a href="#" class="text-white px-6 py-3 rounded-md hover:bg-pink-400 border border-pink-300 transition-colors">Login</a>
-      <a href="#" class="text-white px-6 py-3 rounded-md hover:bg-pink-400 border border-pink-300 transition-colors">Signup</a>
+      <a href="#" class=" text-white px-6 py-3 rounded-md hover:bg-pink-400 border border-pink-300 transition-colors">Login</a>
+      <a href="#" class=" text-white px-6 py-3 rounded-md hover:bg-pink-400 border border-pink-300 transition-colors">Signup</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="flex flex-col-reverse md:flex-row items-center py-16 px-6 md:px-20">
+    <!-- Left: Text Content -->
     <div class="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Plan, promote, and manage events effortlessly from one platform.</h2>
       <p class="mb-6 text-neutral-300">Trusted by Events Professionals Worldwide</p>
       <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-        <button onclick="openTally()" class="text-white px-6 py-3 rounded-md border border-pink-300 hover:text-pink-300">Book Tickets Now</button>
+        <a href="#tally-open=w5g9Ed&tally-emoji-animation=wave" class=" text-white px-6 py-3 rounded-md border border-pink-300 hover:text-pink-300">Book Tickets Now</a>
       </div>
     </div>
 
+    <!-- Right: Image -->
     <div class="w-full md:w-1/2 flex justify-center">
       <img src="images/image.png" alt="Event image" class="w-full max-w-md h-auto rounded-md shadow-lg" />
     </div>
@@ -94,7 +98,7 @@
           <h4 class="text-xl font-semibold mb-2">AI Summit - NYC</h4>
           <p class="text-neutral-800 mb-1">Venue: New-York Paladium</p>
           <p class="text-neutral-800 mb-4">Date: 10-July-2025</p>
-          <button onclick="openTally()" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</button>
+          <a href="#tally-open=w5g9Ed&tally-emoji-animation=wave" id="open" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</a>
         </div>
 
         <!-- Card 2 -->
@@ -102,7 +106,7 @@
           <h4 class="text-xl font-semibold mb-2">Cloud Fest</h4>
           <p class="text-neutral-800 mb-1">Venue: Berlin Convention Center</p>
           <p class="text-neutral-800 mb-4">Date: 12-August-2025</p>
-          <button onclick="openTally()" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</button>
+          <a href="#tally-open=w5g9Ed&tally-emoji-animation=wave" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</a>
         </div>
 
         <!-- Card 3 -->
@@ -110,7 +114,7 @@
           <h4 class="text-xl font-semibold mb-2">Oracle’s Conference</h4>
           <p class="text-neutral-800 mb-1">Venue: KSA</p>
           <p class="text-neutral-800 mb-4">Date: 02-July-2025</p>
-          <button onclick="openTally()" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</button>
+          <a href="#tally-open=w5g9Ed&tally-emoji-animation=wave" class="bg-pink-100 text-black px-4 py-2 border border-pink-300 rounded-md hover:text-pink-600">Book Tickets Now</a>
         </div>
       </div>
     </section>
@@ -121,32 +125,6 @@
     <p class="text-neutral-400">© 2025 Eventify. All rights reserved.</p>
   </footer>
 
-  <!-- Tally Script -->
-  <script>
-    function openTally() {
-      Tally.openPopup('w5g9Ed', {
-        layout: 'modal',
-        width: 700,
-        hideTitle: true,
-        overlay: true,
-        
-        onOpen: () => {
-          const hideTallyBrand = setInterval(() => {
-          const badge = document.querySelector('[data-testid="branding"]');
-          if (badge) {
-            badge.innerText = 'Eventify | Built for Events';
-            badge.style.color = '#f472b6';
-            badge.style.fontFamily = 'Fira Code, monospace';
-            clearInterval(hideTallyBrand);
-          }
-        }, 500);
-        },
-        onSubmit: (payload) => {
-          console.log("Form submitted!", payload);
-        }
-      });
-    }
-  </script>
-
 </body>
+
 </html>
